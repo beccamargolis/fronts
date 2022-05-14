@@ -45,12 +45,29 @@ class SLL {
             return this.head.value;
         }
     }
+
+    // Write a method that returns the sum of all the nodes
+
+    findSum() {
+        var runner = this.head;
+        var sum = 0;
+        if (this.head == null) {
+            return null;
+        }
+        while(runner !==null) {
+            sum+=runner.value;
+            runner=runner.next;
+        }
+        return sum;
+    }
 }
 
 var mySLL = new SLL(); // creating an empty list to start
 console.log(mySLL.front());
-mySLL.addFront(11);
-mySLL.addFront(22);
+mySLL.addFront(1);
+mySLL.addFront(10);
+mySLL.addFront(100);
 console.log(mySLL.front());
 mySLL.removeFront();
 console.log(mySLL.front());
+console.log(mySLL.findSum());
